@@ -115,7 +115,6 @@ int main(int argc, char**argv)
         push_list(&head, node_create(argv[i]));
     }
     print_list(head);
-    printf("\n\nMasques :\n");
     mask_list(head);
 
 }
