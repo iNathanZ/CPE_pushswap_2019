@@ -11,4 +11,5 @@ typedef struct linked_list
     char *value;
     int data;
     struct linked_list *next;
+    struct linked_list *prev;
 } linked_list_t;

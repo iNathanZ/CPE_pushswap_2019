@@ -15,7 +15,7 @@ all: $(NAME)
 
 $(NAME):
 	make -C lib/my all
-	gcc -o $(NAME) $(SRC) -lm
+	gcc -o $(NAME) $(SRC) -g3 -lm
 
 clean:
 	rm -f $(NAME)
