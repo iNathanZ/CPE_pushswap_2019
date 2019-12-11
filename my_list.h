@@ -6,10 +6,17 @@
 */
 
 
+typedef struct linked_list_a
+{
+    char *value;
+    int data;
+    struct linked_list_a *next;
+    struct linked_list_a *prev;
+} linked_list_t;
+
 typedef struct linked_list
 {
     char *value;
     int data;
     struct linked_list *next;
-    struct linked_list *prev;
-} linked_list_t;
+} linked_list_b;
