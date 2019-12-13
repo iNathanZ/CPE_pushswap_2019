@@ -6,7 +6,10 @@
 ##
 
 SRC 	=	main.c		\
-		lib/libmy.a
+			double_circular_linked_list.c		\
+			simple_linked_list.c		\
+			radix.c			\
+			lib/libmy.a
 
 NAME	= 	pushswap
 
