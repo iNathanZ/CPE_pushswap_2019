@@ -11,7 +11,7 @@ SRC 	=	main.c		\
 			radix.c			\
 			lib/libmy.a
 
-NAME	= 	pushswap
+NAME	= 	push_swap
 
 
 all: $(NAME)

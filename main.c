@@ -19,6 +19,8 @@ int main(int argc, char**argv)
     linked_list_t *head_a = NULL;
     linked_list_b *head_b = NULL;
 
+    if (argc <= 1)
+        return (84);
     for (int i = 1; i <= args ; i++) {
         push_list(&head_a, argv[i]);
     }
