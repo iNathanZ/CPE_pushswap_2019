@@ -43,8 +43,6 @@ void pa(linked_list_t **head_a, linked_list_b **head_b, char *value)
 
 void radix_lsb(linked_list_t **head_a, linked_list_b **head_b)
 {
-    linked_list_t *start = *head_a;
-    linked_list_t *temp = *head_a;
     int mask = 0;
 
     for (int i = 0 ; i < 32 ; i++) {
@@ -60,10 +58,7 @@ void radix_lsb(linked_list_t **head_a, linked_list_b **head_b)
                 m--;
             }
         }
-        int n = count_simple_list(*head_b);
-        while (n != 0) {
-            n--;
-           pa(head_a, head_b, (*head_b)->value);
-        }
+        for (int n = count_simple_list(*head_b) ; n != 0 ; n--)
+            pa(head_a, head_b, (*head_b)->value);
     }
 }
