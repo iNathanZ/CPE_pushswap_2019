@@ -25,5 +25,5 @@ int main(int argc, char**argv)
         push_list(&head_a, argv[i]);
     }
     radix_lsb(&head_a, &head_b);
-    return (1);
+    return (0);
 }
