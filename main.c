@@ -11,7 +11,6 @@
 #include "include/my.h"
 #include "include/my_list.h"
 
-
 int main(int argc, char**argv)
 {
     int size = 0;
@@ -19,11 +18,14 @@ int main(int argc, char**argv)
     linked_list_t *head_a = NULL;
     linked_list_b *head_b = NULL;
 
-    if (argc <= 1)
+    if (argc <= 1) {
+        my_putchar('\n');
         return (84);
+    }
     for (int i = 1; i <= args ; i++) {
         push_list(&head_a, argv[i]);
     }
     radix_lsb(&head_a, &head_b);
+    my_putchar('\n');
     return (0);
 }
