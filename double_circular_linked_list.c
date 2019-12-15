@@ -46,7 +46,7 @@ void push_list(linked_list_t **head, char *value)
     return;
 }
 
-void ra(linked_list_t **head)
+void ra_function(linked_list_t **head)
 {
     linked_list_t *new_node = (*head);
     if (*head == NULL)

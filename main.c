@@ -34,7 +34,7 @@ int check_list_neg(linked_list_t *head)
 void neg_sort(linked_list_t *head_a)
 {
     while (head_a->data >= 0)
-        ra(&head_a);
+        ra_function(&head_a);
 }
 
 int main(int argc, char **argv)

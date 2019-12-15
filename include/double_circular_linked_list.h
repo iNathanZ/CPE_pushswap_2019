@@ -15,7 +15,7 @@
 #include "my.h"
 
 void push_list(linked_list_t **head, char *value);
-void ra(linked_list_t **head);
+void ra_function(linked_list_t **head);
 void insertBegin(linked_list_t** head, char *value);
 void print_list(linked_list_t *head);
 int count_list(linked_list_t *head);

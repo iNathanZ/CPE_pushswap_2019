@@ -14,6 +14,6 @@
 #include "my_list.h"
 #include "my.h"
 
-void pb(linked_list_t **head_a, linked_list_b **head_b, char *value);
-void pa(linked_list_t **head_a, linked_list_b **head_b, char *value);
+void pb_function(linked_list_t **head_a, linked_list_b **head_b, char *value);
+void pa_function(linked_list_t **head_a, linked_list_b **head_b, char *value);
 void radix_lsb(linked_list_t **head_a, linked_list_b **head_b);

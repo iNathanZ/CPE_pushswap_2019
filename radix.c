@@ -14,7 +14,7 @@
 #include "include/my.h"
 #include "include/my_list.h"
 
-void pb(linked_list_t **head_a, linked_list_b **head_b, char *value)
+void pb_function(linked_list_t **head_a, linked_list_b **head_b, char *value)
 {
     (*head_a) = (*head_a)->next;
     (*head_a)->prev = (*head_a)->prev->prev;
@@ -23,7 +23,7 @@ void pb(linked_list_t **head_a, linked_list_b **head_b, char *value)
     write(1, "pb ", 3);
 }
 
-void pa(linked_list_t **head_a, linked_list_b **head_b, char *value)
+void pa_function(linked_list_t **head_a, linked_list_b **head_b, char *value)
 {
     insertBegin(head_a, value);
     deleteFirstNodeSimple(head_b);
@@ -39,15 +39,15 @@ void radix_lsb(linked_list_t **head_a, linked_list_b **head_b)
         while (m != 1) {
             mask = pow(2, i);
             if (((*head_a)->data & mask) != 0) {
-                ra(head_a);
+                ra_function(head_a);
                 m--;
             }
             else {
-                pb(&(*head_a), &(*head_b), (*head_a)->value);
+                pb_function(&(*head_a), &(*head_b), (*head_a)->value);
                 m--;
             }
         }
         for (int n = count_simple_list(*head_b) ; n != 0 ; n--)
-            pa(head_a, head_b, (*head_b)->value);
+            pa_function(head_a, head_b, (*head_b)->value);
     }
 }
