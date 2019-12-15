@@ -61,6 +61,11 @@ void ra_function(linked_list_t **head)
 
 void insertBegin(linked_list_t** head, char *value)
 {
+    if (*head == NULL) {
+        push_list(head, value);
+        return;
+    }
+
     linked_list_t *last = (*head)->prev;
     linked_list_t *new_node = malloc(sizeof(linked_list_t));
     new_node->value = value;

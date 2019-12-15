@@ -16,9 +16,13 @@
 
 void pb_function(linked_list_t **head_a, linked_list_b **head_b, char *value)
 {
-    (*head_a) = (*head_a)->next;
-    (*head_a)->prev = (*head_a)->prev->prev;
-    (*head_a)->prev->next = (*head_a);
+    if ((*head_a) == (*head_a)->next)
+        (*head_a) = NULL;
+    else {
+        (*head_a) = (*head_a)->next;
+        (*head_a)->prev = (*head_a)->prev->prev;
+        (*head_a)->prev->next = (*head_a);
+    }
     insertBeginSimple(head_b, value);
     write(1, "pb ", 3);
 }
@@ -33,12 +37,13 @@ void pa_function(linked_list_t **head_a, linked_list_b **head_b, char *value)
 void radix_lsb(linked_list_t **head_a, linked_list_b **head_b)
 {
     int mask = 0;
+    int save = count_list(*head_a);
 
     for (int i = 0 ; i < 32 ; i++) {
-        int m = count_list(*head_a);
-        while (m != 1) {
+        int m = save;
+        while (m != 0) {
             mask = pow(2, i);
-            if (((*head_a)->data & mask) != 0) {
+            if (((*head_a)->data >> i & 1)) {
                 ra_function(head_a);
                 m--;
             }
