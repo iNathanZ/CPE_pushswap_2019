@@ -14,19 +14,8 @@
 #include "include/my.h"
 #include "include/my_list.h"
 
-void print_simple_list(linked_list_t *head)
-{
-    while (head) {
-        my_put_nbr(head->data);
-        my_putchar(' ');
-        head = head->next;
-    }
-    my_putchar('\n');
-}
-
 void pb(linked_list_t **head_a, linked_list_b **head_b, char *value)
 {
-    linked_list_t *tmp = *head_a;
     (*head_a) = (*head_a)->next;
     (*head_a)->prev = (*head_a)->prev->prev;
     (*head_a)->prev->next = (*head_a);
