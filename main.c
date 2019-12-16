@@ -40,16 +40,18 @@ void neg_sort(linked_list_t *head_a)
 int main(int argc, char **argv)
 {
     int args = argc - 1;
-    int n = 0;
     linked_list_t *head_a = NULL;
     linked_list_b *head_b = NULL;
 
-    for (int i = 1; i <= args ; i++)
+    if (argc == 1) {
+        write (1, "\n", 1);
+        return (0);
+    } for (int i = 1; i <= args ; i++)
         push_list(&head_a, argv[i]);
-    n = check_list_sorted(head_a);
-    if (n == 1 || argc <= 1) {
-        my_putchar('\n');
-        return (84);
+    int n = check_list_sorted(head_a);
+    if (n == 1) {
+        write (1, "\n", 1);
+        return (0);
     }
     n = check_list_neg(head_a);
     radix_lsb(&head_a, &head_b);
